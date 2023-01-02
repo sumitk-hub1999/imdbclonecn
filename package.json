@@ -1,0 +1,22 @@
+{
+  "name": "imdbclone",
+  "version": "1.0.0",
+  "description": "coding ninjas imdb project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumitk-hub1999/imdbclonecn.git"
+  },
+  "keywords": [
+    "project"
+  ],
+  "author": "Sumit katyal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumitk-hub1999/imdbclonecn/issues"
+  },
+  "homepage": "https://github.com/sumitk-hub1999/imdbclonecn#readme"
+}
