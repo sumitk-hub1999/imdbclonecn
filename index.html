@@ -9,25 +9,22 @@
   </head>
   <body>
     <nav class="nav">
-      <a href="./index.html" class="nav__link" data-link>OMDB</a>
-      <a href="/wishlist" class="nav__link" data-link>Wishlist</a>
-      <a href="" class="nav__link"></a>
+      <a href="index.html" class="icon" data-link>OMDB</a>
 
       <button class="sign-in">Sign in</button>
-      <a>language</a>
-      <a href=""></a>
     </nav>
-
+    <div class="favourites" id="favourites">
+      <a href="favourite.html">favourites</a>
+    </div>
     <div class="search-wrapper">
       <div class="search-element">
         <h3>Search movie:</h3>
-        <input type="search" id="search " />
-        <button>Search movie</button>
-        <div class="search-list"></div>
+        <input type="search" id="search" placeholder="Search Movie" />
+        <button id="search-button">Search movie</button>
+        <div class="search-list" id="search-list"></div>
       </div>
     </div>
 
-    <div class="movie-result-container"></div>
     <div class="slides"></div>
     <div class="new"></div>
     <div class="classics"></div>
