@@ -11,25 +11,35 @@
     <nav class="nav">
       <a href="index.html" class="icon" data-link>OMDB</a>
 
-      <button class="sign-in">Sign in</button>
+      <!-- <button class="sign-in">Sign in</button> -->
     </nav>
-    <div class="favourites" id="favourites">
-      <a href="favourite.html">favourites</a>
+    <div
+      class="favourites"
+      id="favourites"
+      style="background-color: rgb(166, 163, 163)"
+    >
+      <h3>favourites:</h3>
     </div>
     <div class="search-wrapper">
       <div class="search-element">
         <h3>Search movie:</h3>
-        <input type="search" id="search" placeholder="Search Movie" />
+        <input
+          type="search-input"
+          id="search-input"
+          placeholder="Search Movie"
+        />
         <button id="search-button">Search movie</button>
         <div class="search-list" id="search-list">
-          <div class="search-item-thumbnail">
-            <img
-              src="https://www.weekendnotes.com/im/005/06/red-and-sea-biscuit.jpg"
-            />
-          </div>
-          <div class="search-item-info">
-            <h3>seabiscuit</h3>
-            <p>2003</p>
+          <div class="search-list-listitem">
+            <div class="search-item-thumbnail">
+              <!-- <img
+                src="https://www.weekendnotes.com/im/005/06/red-and-sea-biscuit.jpg"
+              /> -->
+            </div>
+            <div class="search-item-info">
+              <h3>seabiscuit</h3>
+              <p>2003</p>
+            </div>
           </div>
         </div>
       </div>
@@ -41,6 +51,23 @@
             src="https://www.weekendnotes.com/im/005/06/red-and-sea-biscuit.jpg"
             alt="movie movie-poster"
           />
+        </div>
+        <div class="movie-info">
+          <h3 class="movie-title">Seabiscuit</h3>
+          <ul class="movie-para">
+            <li class="year">Year:2003</li>
+            <li class="ratings">Ratings:</li>
+            <li class="released">Released:</li>
+          </ul>
+          <p class="genre">Genre:</p>
+          <p class="writer">Writer:</p>
+          <p class="actors">Actor:</p>
+          <p class="plot">Plot:</p>
+          <p class="language">Language:</p>
+          <p class="awards"></p>
+        </div>
+        <div class="favourites-button">
+          <button>add to favourites</button>
         </div>
       </div>
     </div>
