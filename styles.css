@@ -9,10 +9,8 @@ body {
 }
 
 .nav {
-  min-width: 100vh;
+  width: 100%;
   background-color: rgb(52, 51, 51);
-  display: flex;
-  flex-direction: row;
 }
 
 .icon {
@@ -63,7 +61,9 @@ button:hover {
   background-color: white;
   color: black;
 }
-
+#search-button {
+  width: calc(350px - 8px);
+}
 .search-list h3 {
   align-self: center;
   margin-right: 10px;
@@ -76,6 +76,7 @@ input {
   padding: 0.5rem 1rem;
   font-size: 12px;
   border: none;
+  width: calc(350px - 8px);
 }
 
 .search-list {
@@ -85,7 +86,105 @@ input {
   max-height: 500px;
   overflow-y: scroll;
   z-index: 10;
+  width: calc(350px - 8px);
 }
 
 .search-list .search-list-listitem {
+  background-color: lightgrey;
+  padding: 0.65rem;
+  font-size: 15px;
+  border-bottom: 2px solid black;
+  width: calc(340px - 8px);
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.search-list .search-list-listitem:hover {
+  background-color: white;
+}
+
+.search-list-listitem {
+  display: flex;
+  align-items: center;
+}
+
+.search-item-thumbnail img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.search-item-info h3 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* .search-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-list::-webkit-scrollbar-track{
+
+} */
+
+.hide-search-list {
+  display: none;
+}
+
+.movie-result-container {
+  padding: 3rem 0;
+  background-color: rgb(68, 66, 66);
+  color: white;
+}
+.movie-poster img {
+  max-width: 300px;
+  margin: auto;
+  border: 4px solid white;
+  display: flex;
+  align-items: center;
+}
+
+.movie-info {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.movie-title {
+  font-size: 2rem;
+  color: lightgray;
+}
+
+.movie-para {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.year {
+  font-weight: 500;
+  margin-right: 10px;
+}
+.ratings {
+  background-color: lightgray;
+  color: black;
+  margin-right: 10px;
+}
+.released {
+  font-size: 0.9rem;
+}
+
+.genre {
+  background-color: rgb(43, 42, 42);
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+.plot {
+  max-width: 400px;
+  margin: 1rem auto;
+}
+.language {
+  font-style: italic;
 }
