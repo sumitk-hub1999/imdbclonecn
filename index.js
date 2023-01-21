@@ -140,3 +140,56 @@ function addToFavourites() {
 // .then((end)=>end.json())
 // .then((data)=>)
 //favouriteBtn.addEventListener("click", addToFavourites(movieDetails));
+
+const slidesSection = document.querySelector(".slides-container");
+
+const demoSearch = [
+  "car",
+  "airplane",
+  "kanye",
+  "cars",
+  "lion",
+  "sea",
+  "seabiscuit",
+];
+loadDemos();
+async function loadDemos() {
+  const link1 = `https://www.omdbapi.com/?s=${
+    demoSearch[Math.floor(Math.random() * demoSearch.length)]
+  }&apikey=8be51894`;
+  const res1 = await fetch(`${link1}`);
+  const data1 = await res1.json();
+  //console.log(data);
+  if (data1.Response == "True") {
+    //console.log(data.Search);
+    displayDemos(data1.Search);
+  }
+}
+
+function displayDemos(slides) {
+  // slidesSection.innerHTML = "";
+  for (let i = 0; i < 5; i++) {
+    let slideItem = document.createElement("div");
+    //console.log(searchListItem);
+    slideItem.dataset.id = slides[i].imdbID;
+    slideItem.classList.add("slide");
+    if (slides[i].Poster != "N/A") {
+      slidePoster = slides[i].Poster;
+    } else {
+      slidePoster = "not found.png";
+    }
+    slideItem.innerHTML = `
+    
+    <div class="slide-movie-thumbnail">
+      <img src="${slidePoster}" />
+    </div>
+    <div class="slide-movie-name">
+      <p>${slides[i].Title}</p>
+      <p>${slides[i].Year}</p>
+    </div>
+  
+      `;
+
+    slidesSection.appendChild(slideItem);
+  }
+}

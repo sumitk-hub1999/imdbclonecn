@@ -199,6 +199,7 @@ input {
   color: white;
   display: flex;
   margin-right: 50px;
+  cursor: pointer;
 }
 
 .slide-movie-thumbnail img {
