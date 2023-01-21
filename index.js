@@ -9,9 +9,9 @@ async function loadMovie(searchTerm) {
   const link = `https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=8be51894`;
   const res = await fetch(`${link}`);
   const data = await res.json();
-  console.log(data);
+  //console.log(data);
   if (data.Response == "True") {
-    console.log(data.Search);
+    //console.log(data.Search);
     displaySearchList(data.Search);
   }
 }
@@ -63,7 +63,7 @@ function loadMovieResult() {
   const searchListMovies = searchList.querySelectorAll(".search-list-listitem");
   searchListMovies.forEach((movie) => {
     movie.addEventListener("click", async () => {
-      console.log(movie.dataset.id);
+      //console.log(movie.dataset.id);
       searchList.classList.add("hide-search-list");
       searchBox.value = "";
       const result = await fetch(
@@ -104,15 +104,39 @@ function displayMovies(movieDetails) {
           <p class="language"><b>Language: </b>${movieDetails.Language}</p>
           <p class="awards"><b>Awards: </b>${movieDetails.Awards}</p>
         </div>
-        <div class="favourites-button">
-          <button>add to favourites</button>
-        </div>
+        
+          <button class="favourites-button" onclick="addToFavourites()">add to favourites</button>
+        
         
       </div>
-  `;
+
+      `;
+
+  //const favouriteBtn = resultGrid.querySelector(".favourites-button");
+
+  //const slides = document.querySelector(".slides-container");
+
+  //const movieTitle = document.querySelector(".movie-title");
 }
+const favouriteSection = document.querySelector(".favourites");
+//const favouriteBtn = resultGrid.querySelector(".favourites-button");
+////let movieTitle = resultGrid.querySelector(".movie-title");
+function addToFavourites() {
+  //favouriteSection.innerHTML = "";
+  let details = document.querySelector(".movie-title").innerHTML;
+  console.log(details);
+  let favouriteMovie = document.createElement("p");
+  favouriteMovie.innerHTML = `
+    <p class="favourite-movie">${details}</p>
+    `;
+
+  favouriteSection.appendChild(favouriteMovie);
+}
+
+//favouriteBtn.addEventListener("click", addToFavourites(movieTitle));
 // const url = `https://www.omdbapi.com/?s=${searchterm}&page=1&apikey=8be51894`;
 // let movies = [];
 // fetch(url)
 // .then((end)=>end.json())
 // .then((data)=>)
+//favouriteBtn.addEventListener("click", addToFavourites(movieDetails));

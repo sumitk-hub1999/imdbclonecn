@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: lightgray;
 }
 
 .nav {
@@ -187,4 +188,36 @@ input {
 }
 .language {
   font-style: italic;
+}
+.slides-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.slide {
+  background-color: black;
+  color: white;
+  display: flex;
+  margin-right: 50px;
+}
+
+.slide-movie-thumbnail img {
+  width: 100px;
+  margin-right: 20px;
+}
+.slide-movie-name p {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.favourites {
+  display: flex;
+  flex-direction: row;
+}
+.favourite-movie {
+  background-color: black;
+  color: white;
+  margin-right: 5px;
+  cursor: pointer;
 }
