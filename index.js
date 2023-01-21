@@ -69,8 +69,47 @@ function loadMovieResult() {
       const result = await fetch(
         `https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=8be51894`
       );
+      const movieDetails = await result.json();
+      //console.log(movieDetails);
+      displayMovies(movieDetails);
     });
   });
+}
+
+function displayMovies(movieDetails) {
+  resultGrid.innerHTML = `
+  <div class="movie-poster">
+          <img
+            src="${
+              movieDetails.Poster != "NA"
+                ? movieDetails.Poster
+                : "not found.png"
+            }"
+            alt="movie movie-poster"
+          />
+        </div>
+        <div class="movie-info">
+          <h3 class="movie-title">${movieDetails.Title}</h3>
+          <ul class="movie-para">
+            <li class="year"><b>Year:</b>${movieDetails.Year}</li>
+            <li class="ratings"><b>Ratings:</b>${movieDetails.Rated}</li>
+            <li class="released"><b>Released:</b>${movieDetails.Released}</li>
+          </ul>
+          <p class="genre"><b>Genre:</b>${movieDetails.Genre}</p>
+          <p class="writer"><b>Writer: </b>${movieDetails.Writer}</p>
+          <p class="actors"><b>Actor: </b>${movieDetails.Actors}</p>
+          <p class="plot">
+            <b>Plot: </b>${movieDetails.Plot}
+          </p>
+          <p class="language"><b>Language: </b>${movieDetails.Language}</p>
+          <p class="awards"><b>Awards: </b>${movieDetails.Awards}</p>
+        </div>
+        <div class="favourites-button">
+          <button>add to favourites</button>
+        </div>
+        
+      </div>
+  `;
 }
 // const url = `https://www.omdbapi.com/?s=${searchterm}&page=1&apikey=8be51894`;
 // let movies = [];
